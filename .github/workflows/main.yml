@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: r-rojo/fedora-rpm@v1
+        uses: r-rojo/fedora-rpm@v2
         with:
           who-to-greet: 'Bob'
       - name: Get the output time
