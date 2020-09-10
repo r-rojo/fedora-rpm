@@ -5,9 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
-      - name: Build OPAE RPMs
-        id: hello
-        uses: r-rojo/fedora-rpm@v9
+      - name: Build OPAE CentOS7 RPMs
+        uses: r-rojo/centos7-rpm@v0.1
         with:
           branch: master
           build-type: Release
@@ -15,8 +14,8 @@ jobs:
         uses: actions/upload-artifact@v2.1.4
         with:
           # Artifact name
-          name: OPAE-RPMs
+          name: OPAE-fedora
           # A file, directory or wildcard pattern that describes what to upload
-          path: 
+          path:
           # The desired behavior if no files are found using the provided path.
             opae-sdk/build/*.rpm
