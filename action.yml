@@ -1,10 +1,14 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Build OPAE'
+desciption: 'Build OPAE'
 inputs:
-  who-to-greet:
-    description: 'Who to greet'
-    required: true
-    default: 'World'
+  branch:
+    desciption: branch to checkout
+    required: false
+    default: 'master'
+  build-type:
+    desciption: cmake build type
+    required: false
+    default: 'Release'
 outputs:
   time:
     description: 'The time we greeted you'
@@ -12,4 +16,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.branch }}
+    - ${{ inputs.build-type }}

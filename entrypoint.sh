@@ -5,8 +5,11 @@
 #
 # Distributed under terms of the MIT license.
 #
-echo "Hello $1"
-time=$(date)
+git clone https://github.com/OPAE/opae-sdk.git -b $1
+cd opae-sdk
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=$2
+make -j $(nproc)
 echo "::set-output name=time::$time"
-
 
