@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Build OPAE RPMs
         id: hello
-        uses: r-rojo/fedora-rpm@master
+        uses: r-rojo/fedora-rpm@v9
         with:
           branch: master
           build-type: Release
